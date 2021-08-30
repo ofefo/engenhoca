@@ -2,7 +2,7 @@
 
 A prototype for a improvising machine made in Pure Data.
 
-## Requirements:
+## Requirements
 * freeverb~
 * timbreID
 * mjlib
