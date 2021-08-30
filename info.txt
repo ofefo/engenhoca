@@ -1,0 +1,6 @@
+ENGENHOCA;
+Por Felippe Brandão;
+Para iniciar uma performance, utilize o botão on/off para medir o "offset" a partir do ruído de fundo;
+(deve-se manter em silêncio por alguns segundos);
+Em seguida, escolha se deseja ouvir a saída da eletrônica em áudio ou MIDI;
+Por fim, aperte START para começar.

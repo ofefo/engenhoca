@@ -1,0 +1,12 @@
+#N canvas 960 32 960 1024 12;
+#X obj 197 45 f;
+#X obj 25 119 outlet;
+#X obj 197 20 inlet set_offset;
+#X obj 25 70 expr if($f1 <= $f2 \, 0 \, 1);
+#X obj 25 22 inlet rms;
+#X obj 25 95 change;
+#X connect 0 0 3 1;
+#X connect 2 0 0 0;
+#X connect 3 0 5 0;
+#X connect 4 0 3 0;
+#X connect 5 0 1 0;
