@@ -1,6 +1,16 @@
 ENGENHOCA;
-Por Felippe Brandão;
-Para iniciar uma performance, utilize o botão on/off para medir o "offset" a partir do ruído de fundo;
+Developed by Felippe Brandão;
+To start a performance, use the on/off toggle to measure your background
+noise (you should be quiet for a few seconds);
+Then, chose if you would like to hear the machine playing audio or
+MIDI (that you must configure to what you like);
+After that, press START to begin improvising! Por Felippe Brandão
+;
+---------------------------------------------------------------------------------------------------------
+;
+Para iniciar uma performance, utilize o botão on/off para medir o
+"offset" a partir do ruído de fundo;
 (deve-se manter em silêncio por alguns segundos);
-Em seguida, escolha se deseja ouvir a saída da eletrônica em áudio ou MIDI;
-Por fim, aperte START para começar.
+Em seguida, escolha se deseja ouvir a saída da eletrônica em áudio
+ou MIDI;
+Por fim, aperte START para começar a improvisar! 
