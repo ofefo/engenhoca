@@ -1,5 +1,5 @@
-#N struct 8936-f float x;
-#N canvas 1282 84 316 970 12;
+#N struct 9454-f float x;
+#N canvas 2 54 1916 1000 12;
 #X obj 71 327 spigot;
 #X obj 71 350 outlet;
 #X obj 71 4 inlet onset;
@@ -42,7 +42,7 @@
 #X obj 478 196 *;
 #X obj 383 4 inlet oct_prob;
 #X obj 487 4 inlet oct_spread;
-#N canvas 1602 84 316 970 timbre 1;
+#N canvas 1602 84 316 970 timbre 0;
 #X obj 15 13 inlet list;
 #X obj 93 13 inlet bang;
 #X obj 16 147 list store;
@@ -79,7 +79,6 @@
 #X restore 166 64 pd timbre;
 #X obj 478 170 f;
 #X obj 446 103 t b b;
-#X text 157 300 timbre \, pitch \, dur \, rms;
 #X obj 2 243 == 0;
 #X obj 903 4 inlet flat_curve;
 #N canvas 962 54 956 1000 make_list 0;
@@ -99,9 +98,10 @@
 #X obj 572 157 list;
 #X obj 421 222 list;
 #X obj 421 248 list;
+#X text 157 300 timbre \, pitch \, dur \, rms \, flat curve;
 #X connect 0 0 1 0;
 #X connect 2 0 11 0;
-#X connect 3 0 24 0;
+#X connect 3 0 23 0;
 #X connect 4 0 0 0;
 #X connect 5 0 7 1;
 #X connect 6 0 8 0;
@@ -115,9 +115,9 @@
 #X connect 11 3 22 0;
 #X connect 11 4 13 0;
 #X connect 12 0 13 1;
-#X connect 13 0 27 0;
-#X connect 14 0 28 1;
-#X connect 15 0 28 0;
+#X connect 13 0 26 0;
+#X connect 14 0 27 1;
+#X connect 15 0 27 0;
 #X connect 16 0 17 1;
 #X connect 17 0 14 1;
 #X connect 18 0 8 1;
@@ -127,9 +127,9 @@
 #X connect 21 0 20 2;
 #X connect 22 0 14 0;
 #X connect 22 1 21 0;
-#X connect 24 0 0 1;
-#X connect 25 0 26 0;
-#X connect 26 0 27 1;
-#X connect 27 0 29 1;
-#X connect 28 0 29 0;
-#X connect 29 0 4 1;
+#X connect 23 0 0 1;
+#X connect 24 0 25 0;
+#X connect 25 0 26 1;
+#X connect 26 0 28 1;
+#X connect 27 0 28 0;
+#X connect 28 0 4 1;
