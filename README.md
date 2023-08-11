@@ -7,3 +7,4 @@ A prototype for a improvising machine made in Pure Data.
 * timbreID
 * mjlib
 * list-abs
+* cyclone
