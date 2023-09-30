@@ -8,3 +8,4 @@ A prototype for a improvising machine made in Pure Data.
 * mjlib
 * list-abs
 * cyclone
+* kmeans
