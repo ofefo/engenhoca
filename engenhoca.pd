@@ -1,48 +1,25 @@
-#N struct 1172-f float x;
-#N struct 1197-f float x;
-#N struct 1220-f float x;
-#N struct 1229-f float x;
-#N struct 1251-f float x;
-#N struct 1395-f float x;
-#N struct 1397-f float x;
-#N struct 1432-f float x;
-#N struct 1434-f float x;
-#N struct 1447-f float x;
-#N struct 1472-f float x;
-#N struct 1495-f float x;
-#N struct 1504-f float x;
-#N struct 1526-f float x;
-#N struct 1670-f float x;
-#N struct 1672-f float x;
-#N struct 1707-f float x;
-#N struct 1709-f float x;
-#N struct 1722-f float x;
-#N struct 1747-f float x;
-#N struct 1770-f float x;
-#N struct 1779-f float x;
-#N struct 1801-f float x;
-#N struct 1945-f float x;
-#N struct 1947-f float x;
-#N struct 1982-f float x;
-#N struct 1984-f float x;
-#N struct 1997-f float x;
-#N struct 2022-f float x;
-#N struct 2045-f float x;
-#N struct 2054-f float x;
-#N struct 2076-f float x;
-#N struct 2220-f float x;
-#N struct 2222-f float x;
-#N struct 2257-f float x;
-#N struct 2259-f float x;
-#N struct 2272-f float x;
-#N struct 2297-f float x;
-#N struct 2320-f float x;
-#N struct 2329-f float x;
-#N struct 2351-f float x;
-#N struct 2495-f float x;
-#N struct 2497-f float x;
-#N struct 2532-f float x;
-#N struct 2534-f float x;
+#N struct 1171-f float x;
+#N struct 1219-f float x;
+#N struct 1228-f float x;
+#N struct 1250-f float x;
+#N struct 1009-f float x;
+#N struct 1446-f float x;
+#N struct 1494-f float x;
+#N struct 1503-f float x;
+#N struct 1525-f float x;
+#N struct 1721-f float x;
+#N struct 1769-f float x;
+#N struct 1778-f float x;
+#N struct 1800-f float x;
+#N struct 1996-f float x;
+#N struct 2044-f float x;
+#N struct 2053-f float x;
+#N struct 2075-f float x;
+#N struct 2271-f float x;
+#N struct 2319-f float x;
+#N struct 2328-f float x;
+#N struct 2350-f float x;
+#N struct 2494-f float x;
 #N canvas 962 54 956 1000 12;
 #X declare -lib mjlib;
 #X declare -lib list-abs;
@@ -51,7 +28,7 @@
 #X declare -lib timbreID/timbreIDLib;
 #X declare -path else;
 #X declare -lib kmeans;
-#N canvas 2 54 1916 1000 (subpatch) 0;
+#N canvas 2 54 1916 1000 (subpatch) 1;
 #X obj 620 352 adc~;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array microphone 4800 float 3;
@@ -799,7 +776,7 @@
 #X obj 620 458 clip~ -0.99 0.99;
 #X obj 518 594 s~ \$0-audioin;
 #X obj 394 99 vsl 30 125 0.1 5 1 1 \$0-gain empty Gain -7 -15 0 20
--228856 -1 -1 7299 1;
+-228856 -1 -1 14598 1;
 #X obj 778 593 tabwrite~ env;
 #N canvas 0 32 1920 1024 (subpatch) 0;
 #X array env 4800 float 3;
@@ -1342,15 +1319,15 @@
 64.7976 64.7976 64.7976 64.7976 64.7976 64.7976 64.7976 64.7976 64.7976
 ;
 #X coords 0 100 4800 0 200 100 1 0 0;
-#X restore 23 504 graph;
-#X obj 233 506 vsl 30 100 1 100 0 0 empty \$0-set_offset Offset -10
--15 0 15 -228856 -1 -1 6577 1;
+#X restore 40 504 graph;
+#X obj 250 506 vsl 30 100 1 100 0 0 empty \$0-set_offset Offset -10
+-15 0 15 -228856 -1 -1 0 1;
 #X obj 638 403 r \$0-gain;
-#X obj 288 504 tgl 50 0 \$0-offset_toggle empty on/off 7 7 0 10 -262144
+#X obj 305 504 tgl 50 0 \$0-offset_toggle empty on/off 7 7 0 10 -262144
 -1 -1 0 1;
 #X obj 778 556 spigot;
-#X obj 288 584 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-set_offset empty
-0 -8 0 20 -262144 -1 -1 66.7714 256;
+#X obj 305 584 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-set_offset empty
+0 -8 0 20 -262144 -1 -1 0 256;
 #X obj 778 529 env~ 64;
 #N canvas 962 54 956 1000 offset 0;
 #X obj 30 182 array max env;
@@ -1383,23 +1360,23 @@
 #X connect 12 0 7 0;
 #X connect 12 1 13 0;
 #X connect 13 0 11 0;
-#X restore 288 561 pd offset;
+#X restore 305 561 pd offset;
 #X obj 620 376 hip~ 3;
 #X obj 304 -55 loadbang;
 #X obj 620 429 *~;
 #X msg 304 -29 1;
-#X obj 114 430 tgl 30 0 empty \$0-v1_status v1 0 -6 0 15 -228856 -1
+#X obj 131 430 tgl 30 0 empty \$0-v1_status v1 0 -6 0 15 -228856 -1
 -1 0 1;
-#X obj 146 430 tgl 30 0 empty \$0-v2_status v2 0 -6 0 15 -228856 -1
--1 1 1;
-#X obj 178 430 tgl 30 0 empty \$0-v3_status v3 0 -6 0 15 -228856 -1
--1 1 1;
+#X obj 163 430 tgl 30 0 empty \$0-v2_status v2 0 -6 0 15 -228856 -1
+-1 0 1;
+#X obj 195 430 tgl 30 0 empty \$0-v3_status v3 0 -6 0 15 -228856 -1
+-1 0 1;
 #X obj 364 7 bng 50 250 50 0 \$0-start empty START 3 25 0 15 -4034
 -1 -262144;
-#X obj 210 430 tgl 30 0 empty \$0-v4_status v4 0 -6 0 15 -228856 -1
--1 1 1;
-#X obj 242 430 tgl 30 0 empty \$0-v5_status v5 0 -6 0 15 -228856 -1
--1 1 1;
+#X obj 227 430 tgl 30 0 empty \$0-v4_status v4 0 -6 0 15 -228856 -1
+-1 0 1;
+#X obj 259 430 tgl 30 0 empty \$0-v5_status v5 0 -6 0 15 -228856 -1
+-1 0 1;
 #X obj 632 499 loadbang;
 #X msg 632 524 1;
 #N canvas 0 50 450 250 (subpatch) 0;
@@ -2207,18 +2184,18 @@
 -7.8615e-09 -3.30638e-09 1.84448e-09 3.04601e-09 1.34734e-10 -1.25135e-09
 1.70661e-09 5.98934e-09 1.00735e-08;
 #X coords 0 1 4800 -1 200 125 1 0 0;
-#X restore 23 277 graph;
+#X restore 40 277 graph;
 #X obj 620 594 tabwrite~ microphone;
 #X obj 883 564 r~ \$0-out_sum;
 #X obj 883 593 tabwrite~ electronics;
-#X obj 332 316 tgl 50 0 \$0-audio_status empty AUDIO 0 -6 0 15 -228856
+#X obj 349 316 tgl 50 0 \$0-audio_status empty AUDIO 0 -6 0 15 -228856
 -1 -1 1 1;
-#X obj 388 316 tgl 50 0 \$0-midi_status empty MIDI 0 -6 0 15 -228856
+#X obj 405 316 tgl 50 0 \$0-midi_status empty MIDI 0 -6 0 15 -228856
 -1 -1 0 1;
 #X obj 1574 105 declare -lib mjlib;
 #X obj 1574 135 declare -lib list-abs;
 #X obj 1574 45 declare -lib freeverb;
-#X obj 332 374 expr abs($f1 - 1);
+#X obj 349 374 expr abs($f1 - 1);
 #X obj 323 103 vu 20 120 \$0-audio_out INPUT 10 -15 0 13 -66577 -1
 1 0;
 #X obj 559 125 r~ \$0-audioin;
@@ -2232,7 +2209,7 @@
 #X obj 698 15 r \$0-info_bang;
 #X obj 559 175 - 100;
 #X obj 632 550 metro 100;
-#X text 21 442 VOICE STATUS;
+#X text 38 442 VOICE STATUS;
 #X text 18 21 HELP;
 #X obj 1574 165 declare -lib cyclone;
 #X obj 1574 75 declare -lib timbreID/timbreIDLib;
@@ -2251,17 +2228,17 @@
 0;
 #X obj 433 202 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-gain empty 0 -8
 0 20 -262144 -1 -1 1 256;
-#X obj 229 280 vu 20 120 \$0-out_L OUTPUT 10 -15 0 13 -66577 -1 1 0
+#X obj 246 280 vu 20 120 \$0-out_L OUTPUT 10 -15 0 13 -66577 -1 1 0
 ;
-#X obj 294 280 vu 20 120 \$0-out_R empty 10 -15 0 13 -66577 -1 0 0
+#X obj 311 280 vu 20 120 \$0-out_R empty 10 -15 0 13 -66577 -1 0 0
 ;
-#X text 337 279 SELECT OUTPUT;
-#X obj 332 237 loadbang;
-#X msg 332 261 1;
+#X text 354 279 SELECT OUTPUT;
+#X obj 349 237 loadbang;
+#X msg 349 261 1;
 #X obj 42 99 tgl 50 0 empty \$0-status STATUS 0 -6 0 15 -228856 -1
 -1 0 1;
 #X obj 40 170 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-pitch PITCH 0 -8
-0 20 -262144 -1 -1 46.7228 256;
+0 20 -262144 -1 -1 0 256;
 #X connect 0 0 14 0;
 #X connect 2 0 12 0;
 #X connect 2 0 3 0;
@@ -2847,25 +2824,25 @@ and the last rhythmic duration.;
 #N canvas 1282 54 636 1000 view 0;
 #X obj 10 36 unpack f f f f f f f f f f;
 #X obj 10 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 20 1;
+-1 -1 12700 1;
 #X obj 29 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 301 1;
+-1 -1 12700 1;
 #X obj 49 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1083 1;
+-1 -1 12700 1;
 #X obj 69 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 823 1;
+-1 -1 12700 1;
 #X obj 89 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 843 1;
+-1 -1 12700 1;
 #X obj 109 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2428 1;
+-1 -1 12700 1;
 #X obj 129 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2046 1;
+-1 -1 12700 1;
 #X obj 149 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2709 1;
+-1 -1 12700 1;
 #X obj 169 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2408 1;
+-1 -1 12700 1;
 #X obj 189 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 40 1;
+-1 -1 12700 1;
 #X obj 10 11 r \$0-octaves_prob;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
@@ -4194,16 +4171,16 @@ played.;
 #X connect 28 0 3 8;
 #X restore 3 46 pd voice;
 #X obj 103 10 tgl 30 0 \$0-v2_status \$0-v2 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 203 10 tgl 30 0 \$0-v3_status \$0-v3 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 103 70 s \$0-voice02;
 #X obj 203 72 s \$0-voice03;
 #X obj 303 8 tgl 30 0 \$0-v4_status \$0-v4 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 303 72 s \$0-voice04;
 #X obj 403 7 tgl 30 0 \$0-v5_status \$0-v5 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 403 72 s \$0-voice05;
 #N canvas 962 54 476 1000 start/stop 0;
 #X msg 246 82 0;
@@ -4665,7 +4642,7 @@ played.;
 #X connect 33 0 11 0;
 #X restore 566 76 pd decision making;
 #N canvas 1282 54 636 1000 output 0;
-#N canvas 2 54 956 1000 synth 1;
+#N canvas 2 54 956 1000 synth 0;
 #X obj 26 57 inlet v;
 #X obj 26 138 fm_synth;
 #X obj 52 84 r \$0-set_offset;
@@ -4680,15 +4657,15 @@ played.;
 #X obj 258 129 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 198 71 t f f;
-#N canvas 962 54 956 1000 grain 1;
+#N canvas 642 54 636 1000 grain 0;
 #X obj 22 6 inlet~;
 #X obj 22 373 outlet~;
-#X obj 122 99 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 122 99 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 122 144 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 263 145 nbx 3 14 1 32 0 0 empty empty number_of_grains 0 -8
-0 12 -228856 -1 -1 13 256;
+0 12 -228856 -1 -1 1 256;
 #X obj 21 172 else/grain.live~ -n 32 -length 1000;
 #X obj 122 122 metro 500;
 #X obj 22 94 delay~ 10000;
