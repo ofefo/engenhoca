@@ -1,11 +1,20 @@
 #N canvas 962 54 956 1000 12;
-#X obj 7 61 timer;
-#X obj 7 35 t b b;
+#X obj 7 116 timer;
 #X obj 7 10 inlet onset;
-#X obj 7 85 outlet ms;
-#X text 107 7 Each rhythmic figure duration is calculated as the elapsed
-time between two onsets.;
-#X connect 0 0 3 0;
+#X obj 7 140 outlet ms;
+#X obj 97 10 inlet offset;
+#X text 101 95 Each rhythmic figure duration is calculated as the elapsed
+time between tthe last onset and the last bang.;
+#X msg 111 36 1;
+#X obj 39 60 spigot;
+#X obj 39 84 t b b;
+#X msg 78 36 0;
+#X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 1 1 0 1;
-#X connect 2 0 1 0;
+#X connect 1 0 5 0;
+#X connect 3 0 6 0;
+#X connect 5 0 6 1;
+#X connect 6 0 7 0;
+#X connect 7 0 0 1;
+#X connect 7 1 8 0;
+#X connect 8 0 6 1;
