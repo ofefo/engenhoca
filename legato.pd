@@ -1,4 +1,4 @@
-#N canvas 962 54 956 1000 12;
+#N canvas 1282 54 636 1000 12;
 #X obj 2 18 inlet onset;
 #X obj 46 141 outlet;
 #X obj 93 18 inlet status;
@@ -9,6 +9,7 @@
 #X connect 0 0 3 0;
 #X connect 0 0 4 1;
 #X connect 2 0 4 0;
+#X connect 2 0 3 1;
 #X connect 3 0 5 1;
 #X connect 4 0 5 0;
 #X connect 5 0 6 0;
