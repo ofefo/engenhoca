@@ -1,48 +1,25 @@
-#N struct 1169-f float x;
-#N struct 1194-f float x;
-#N struct 1217-f float x;
-#N struct 1226-f float x;
-#N struct 1248-f float x;
-#N struct 1392-f float x;
-#N struct 1394-f float x;
-#N struct 1429-f float x;
-#N struct 1431-f float x;
-#N struct 1444-f float x;
-#N struct 1469-f float x;
-#N struct 1492-f float x;
-#N struct 1501-f float x;
-#N struct 1523-f float x;
-#N struct 1667-f float x;
-#N struct 1669-f float x;
-#N struct 1704-f float x;
-#N struct 1706-f float x;
-#N struct 1719-f float x;
-#N struct 1744-f float x;
-#N struct 1767-f float x;
-#N struct 1776-f float x;
-#N struct 1798-f float x;
-#N struct 1942-f float x;
-#N struct 1944-f float x;
-#N struct 1979-f float x;
-#N struct 1981-f float x;
-#N struct 1994-f float x;
-#N struct 2019-f float x;
-#N struct 2042-f float x;
-#N struct 2051-f float x;
-#N struct 2073-f float x;
-#N struct 2217-f float x;
-#N struct 2219-f float x;
-#N struct 2254-f float x;
-#N struct 2256-f float x;
-#N struct 2269-f float x;
-#N struct 2294-f float x;
-#N struct 2317-f float x;
-#N struct 2326-f float x;
-#N struct 2348-f float x;
-#N struct 2492-f float x;
-#N struct 2494-f float x;
-#N struct 2529-f float x;
-#N struct 2531-f float x;
+#N struct 1176-f float x;
+#N struct 1224-f float x;
+#N struct 1233-f float x;
+#N struct 1255-f float x;
+#N struct 1009-f float x;
+#N struct 1451-f float x;
+#N struct 1499-f float x;
+#N struct 1508-f float x;
+#N struct 1530-f float x;
+#N struct 1726-f float x;
+#N struct 1774-f float x;
+#N struct 1783-f float x;
+#N struct 1805-f float x;
+#N struct 2001-f float x;
+#N struct 2049-f float x;
+#N struct 2058-f float x;
+#N struct 2080-f float x;
+#N struct 2276-f float x;
+#N struct 2324-f float x;
+#N struct 2333-f float x;
+#N struct 2355-f float x;
+#N struct 2499-f float x;
 #N canvas 962 54 956 1000 12;
 #X declare -lib mjlib;
 #X declare -lib list-abs;
@@ -1366,13 +1343,13 @@
 #X coords 0 100 4800 0 200 100 1 0 0;
 #X restore 40 504 graph;
 #X obj 250 506 vsl 30 100 1 100 0 0 empty \$0-set_offset Offset -10
--15 0 15 -228856 -1 -1 5708 1;
+-15 0 15 -228856 -1 -1 0 1;
 #X obj 638 403 r \$0-gain;
 #X obj 305 504 tgl 50 0 \$0-offset_toggle empty on/off 7 7 0 10 -262144
 -1 -1 0 1;
 #X obj 778 556 spigot;
 #X obj 305 584 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-set_offset empty
-0 -8 0 20 -262144 -1 -1 58.0803 256;
+0 -8 0 20 -262144 -1 -1 0 256;
 #X obj 778 529 env~ 64;
 #N canvas 1442 54 476 1000 offset 0;
 #X obj 143 365 print Offset set to;
@@ -1413,11 +1390,11 @@
 #X obj 620 429 *~;
 #X msg 304 -29 1;
 #X obj 131 430 tgl 30 0 empty \$0-v1_status v1 0 -6 0 15 -228856 -1
--1 1 1;
+-1 0 1;
 #X obj 163 430 tgl 30 0 empty \$0-v2_status v2 0 -6 0 15 -228856 -1
--1 1 1;
+-1 0 1;
 #X obj 195 430 tgl 30 0 empty \$0-v3_status v3 0 -6 0 15 -228856 -1
--1 1 1;
+-1 0 1;
 #X obj 364 7 bng 50 250 50 0 \$0-start empty START 3 25 0 15 -4034
 -1 -262144;
 #X obj 227 430 tgl 30 0 empty \$0-v4_status v4 0 -6 0 15 -228856 -1
@@ -2173,9 +2150,9 @@
 #X obj 32 100 tgl 30 0 empty \$0-status STATUS -3 -5 0 10 -228856 -1
 -1 0 1;
 #X obj 30 151 nbx 3 25 -1e+37 1e+37 0 0 empty \$0-pitch PITCH(midi)
-0 -8 0 10 -262144 -1 -1 88.3381 256;
+0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 30 200 nbx 5 25 -1e+37 1e+37 0 0 empty \$0-last_dur DURATION(ms)
-0 -8 0 10 -262144 -1 -1 12 256;
+0 -8 0 10 -262144 -1 -1 0 256;
 #X obj 68 100 bng 30 250 50 0 empty \$0-onset ONSET 1 -5 0 10 -228856
 -1 -1;
 #X connect 0 0 14 0;
@@ -2210,7 +2187,7 @@
 #X connect 64 0 30 0;
 #X coords 0 1 100 -1 510 615 1 0 0;
 #X restore 6 5 graph;
-#N canvas 828 54 1090 1000 variables 0;
+#N canvas 2 54 1916 1000 variables 1;
 #X floatatom 204 55 5 0 0 0 - - -;
 #X floatatom 4 55 5 0 0 0 - - -;
 #X floatatom 102 55 5 0 0 0 - - -;
@@ -2261,7 +2238,6 @@
 #X obj 383 578 list;
 #X obj 483 578 list;
 #X text 7 320 PITCH (0-1);
-#X text 6 530 THOUGHT;
 #X obj 583 578 list;
 #X obj 583 553 r \$0-voice04;
 #X obj 683 578 list;
@@ -2289,10 +2265,9 @@
 #X obj 90 456 list-show;
 #X msg 90 481 3 4;
 #X obj 522 367 list-show;
-#X msg 522 392 5 6 6;
+#X msg 522 392 6 2 0 3 1 5 7 5 6 0;
 #X obj 522 449 list-show;
-#X msg 522 474 0.0689655 0.0344828 0.137931 0.0344828 0.172414 0.172414
-0.103448 0.0344828 0.172414 0.0689655;
+#X msg 522 474 6 2 1 3 1 5 7 5 6 1;
 #X obj 5 309 cnv 15 1000 10 empty empty empty 20 12 0 14 -233017 -66577
 0;
 #X obj 283 578 list-show;
@@ -2301,6 +2276,7 @@
 0.607445 0.585224 0.562347 0.543935;
 #X obj 776 578 list-show;
 #X msg 776 603;
+#X text 6 530 VOICES;
 #X connect 9 0 7 0;
 #X connect 10 0 11 0;
 #X connect 12 0 13 0;
@@ -2311,36 +2287,36 @@
 #X connect 20 0 6 0;
 #X connect 22 0 21 0;
 #X connect 23 0 27 0;
-#X connect 24 0 72 0;
+#X connect 24 0 71 0;
 #X connect 25 0 28 0;
 #X connect 30 0 33 0;
 #X connect 31 0 32 0;
 #X connect 34 0 35 0;
 #X connect 37 0 36 0;
 #X connect 38 0 39 0;
-#X connect 40 0 76 0;
-#X connect 41 0 74 0;
-#X connect 42 0 79 0;
+#X connect 40 0 75 0;
+#X connect 41 0 73 0;
+#X connect 42 0 78 0;
 #X connect 43 0 45 0;
 #X connect 44 0 46 0;
-#X connect 50 0 49 0;
-#X connect 52 0 51 0;
-#X connect 53 0 67 0;
-#X connect 54 0 81 0;
-#X connect 55 0 26 0;
-#X connect 57 0 5 0;
-#X connect 58 0 4 0;
-#X connect 59 0 8 0;
-#X connect 63 0 62 0;
-#X connect 64 0 3 0;
-#X connect 65 0 69 0;
-#X connect 67 0 68 0;
-#X connect 69 0 70 0;
-#X connect 72 0 73 0;
-#X connect 74 0 75 0;
-#X connect 76 0 77 0;
-#X connect 79 0 80 0;
-#X connect 81 0 82 0;
+#X connect 49 0 48 0;
+#X connect 51 0 50 0;
+#X connect 52 0 66 0;
+#X connect 53 0 80 0;
+#X connect 54 0 26 0;
+#X connect 56 0 5 0;
+#X connect 57 0 4 0;
+#X connect 58 0 8 0;
+#X connect 62 0 61 0;
+#X connect 63 0 3 0;
+#X connect 64 0 68 0;
+#X connect 66 0 67 0;
+#X connect 68 0 69 0;
+#X connect 71 0 72 0;
+#X connect 73 0 74 0;
+#X connect 75 0 76 0;
+#X connect 78 0 79 0;
+#X connect 80 0 81 0;
 #X restore 526 266 pd variables;
 #X text 525 12 COMPONENTS;
 #N canvas 962 54 956 1000 master 0;
@@ -2441,7 +2417,7 @@
 #X connect 28 0 24 1;
 #X connect 29 0 25 0;
 #X restore 526 346 pd master;
-#N canvas 2 54 1916 1000 input 0;
+#N canvas 2 54 1916 1000 input 1;
 #X obj 13 12 r~ \$0-audioin;
 #X obj 283 118 s \$0-atk_type;
 #X obj 110 447 s \$0-ioi_min;
@@ -2783,25 +2759,25 @@ and the last rhythmic duration.;
 #N canvas 1282 54 636 1000 view 0;
 #X obj 10 36 unpack f f f f f f f f f f;
 #X obj 10 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 876 1;
+-1 -1 12700 1;
 #X obj 29 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 438 1;
+-1 -1 12700 1;
 #X obj 49 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1752 1;
+-1 -1 12700 1;
 #X obj 69 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 438 1;
+-1 -1 12700 1;
 #X obj 89 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2190 1;
+-1 -1 12700 1;
 #X obj 109 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2190 1;
+-1 -1 12700 1;
 #X obj 129 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1314 1;
+-1 -1 12700 1;
 #X obj 149 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 438 1;
+-1 -1 12700 1;
 #X obj 169 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2190 1;
+-1 -1 12700 1;
 #X obj 189 64 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 876 1;
+-1 -1 12700 1;
 #X obj 10 11 r \$0-octaves_prob;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
@@ -3552,7 +3528,7 @@ from the last offset to the next onset.;
 #X restore 526 46 pd input analysis;
 #N canvas 2 54 1916 1000 decision 0;
 #X obj 3 10 tgl 30 0 \$0-v1_status \$0-v1 empty 17 7 0 10 -262144 -1
--1 1 1;
+-1 0 1;
 #N canvas 2 54 1916 1000 orchestration 0;
 #N canvas 962 54 956 1000 random 0;
 #X obj 18 15 inlet;
@@ -4219,9 +4195,9 @@ played.;
 #X connect 28 0 3 8;
 #X restore 3 46 pd voice;
 #X obj 103 10 tgl 30 0 \$0-v2_status \$0-v2 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 203 10 tgl 30 0 \$0-v3_status \$0-v3 empty 17 7 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 103 70 s \$0-voice02;
 #X obj 203 72 s \$0-voice03;
 #X obj 303 8 tgl 30 0 \$0-v4_status \$0-v4 empty 17 7 0 10 -262144
@@ -4708,12 +4684,12 @@ played.;
 #N canvas 1538 54 380 1000 grain 0;
 #X obj 22 6 inlet~;
 #X obj 22 373 outlet~;
-#X obj 122 99 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 122 99 tgl 17 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 122 144 bng 18 250 50 0 empty empty empty 17 7 0 10 -228856
 -1 -1;
 #X obj 263 145 nbx 3 14 1 32 0 0 empty empty number_of_grains 0 -8
-0 12 -228856 -1 -1 20 256;
+0 12 -228856 -1 -1 1 256;
 #X obj 21 172 else/grain.live~ -n 32 -length 1000;
 #X obj 122 122 metro 500;
 #X obj 22 94 delay~ 10000;
