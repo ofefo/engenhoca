@@ -1,8 +1,8 @@
-#N canvas 2 54 1916 1000 12;
+#N canvas 962 54 956 1000 12;
 #X obj 8 325 clip~ -0.99 0.99;
 #X obj 8 277 hip~ 3;
 #X obj 8 302 *~, f 16;
-#X obj 204 143 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 187 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 8 4 inlet list;
 #X obj 117 278 expr $f1 * $f2, f 27;
@@ -67,26 +67,30 @@
 #X connect 1 1 3 0;
 #X connect 3 0 2 1;
 #X restore 48 52 pd flat_env;
-#N canvas 1282 54 636 1000 add_noise 0;
-#X obj 133 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#N canvas 2 54 1916 1000 add_noise 1;
+#X obj 208 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 133 106 vline~;
-#X obj 133 176 snapshot~;
-#X obj 143 153 bang~;
-#X obj 35 313 outlet~;
-#X obj 35 265 +~;
-#X obj 35 289 /~ 2;
-#X obj 133 11 inlet bang;
+#X obj 208 106 vline~;
+#X obj 208 176 snapshot~;
+#X obj 218 153 bang~;
+#X obj 35 343 outlet~;
+#X obj 35 295 +~;
+#X obj 35 319 /~ 2;
+#X obj 208 11 inlet bang;
 #X obj 35 11 inlet~ signal;
-#X obj 210 11 inlet ioi;
+#X obj 284 11 inlet ioi;
 #X obj 53 187 noise~;
 #X obj 53 211 *~;
-#X obj 133 200 t f f;
-#X obj 133 55 f;
-#X obj 133 131 tabread4~ \$0-flat_env_out;
-#X msg 133 82 0 0 \, 99 \$1;
-#X obj 53 236 *~ 0.5;
-#X obj 165 224 + 1.5;
+#X obj 208 200 t f f;
+#X obj 208 55 f;
+#X obj 208 131 tabread4~ \$0-flat_env_out;
+#X msg 208 82 0 0 \, 99 \$1;
+#X obj 53 266 *~ 0.5;
+#X obj 240 224 + 1.5;
+#X obj 132 11 inlet midi;
+#X obj 132 36 mtof;
+#X obj 132 60 sig~;
+#X obj 53 238 vcf~ 100;
 #X connect 0 0 13 0;
 #X connect 1 0 14 0;
 #X connect 2 0 12 0;
@@ -97,7 +101,7 @@
 #X connect 8 0 5 0;
 #X connect 9 0 13 1;
 #X connect 10 0 11 0;
-#X connect 11 0 16 0;
+#X connect 11 0 21 0;
 #X connect 12 0 11 1;
 #X connect 12 1 17 0;
 #X connect 13 0 15 0;
@@ -105,23 +109,27 @@
 #X connect 15 0 1 0;
 #X connect 16 0 5 1;
 #X connect 17 0 6 1;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 1;
+#X connect 21 0 16 0;
 #X restore 8 253 pd add_noise;
 #X obj 8 74 unpack f f f f, f 37;
 #X text 83 3 timbre \, midi \, ioi \, rms \, flatness curve;
 #X obj 8 29 list split 5;
 #X obj 264 100 expr (pow(10 \, $f1/20)*0.0001) + $f2;
-#N canvas 2 54 1916 1000 wave_generation 1;
-#X obj 113 212 outlet~;
+#N canvas 962 54 956 1000 wave_generation 0;
+#X obj 156 212 outlet~;
 #X obj 113 16 inlet frequency;
 #X obj 23 16 inlet timbre;
-#X obj 70 138 osc~;
-#X obj 113 138 phasor~;
-#X obj 113 188 -~ 1;
-#X obj 113 162 *~ 2;
-#X obj 113 42 +~;
+#X obj 113 138 osc~;
+#X obj 156 138 phasor~;
+#X obj 156 188 -~ 1;
+#X obj 156 162 *~ 2;
+#X obj 156 42 +~;
 #X obj 224 16 inlet~ signal;
-#X obj 113 114 *~;
-#X obj 70 115 *~;
+#X obj 156 114 *~;
+#X obj 113 115 *~;
 #X obj 23 64 expr abs($f1-1);
 #X obj 23 40 < 4;
 #X connect 1 0 7 0;
@@ -139,7 +147,6 @@
 #X connect 12 0 9 1;
 #X connect 12 0 11 0;
 #X restore 8 228 pd wave_generation;
-#X f 24;
 #N canvas 1282 54 636 1000 envelope 0;
 #X obj 11 11 inlet bang;
 #X obj 11 177 outlet rms;
@@ -158,9 +165,9 @@
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
-#X restore 204 165 pd envelope;
+#X restore 187 166 pd envelope;
 #X text 270 72 timbre \, midi \, ioi \, rms;
-#N canvas 642 54 636 1000 modulator 0;
+#N canvas 962 54 956 1000 modulator 0;
 #X obj 98 147 osc~;
 #X obj 98 196 *~;
 #X obj 116 29 mtof;
@@ -195,14 +202,14 @@
 #N canvas 1282 54 636 1000 timbre 0;
 #N canvas 1280 32 640 1024 (subpatch) 0;
 #X array \$0-envelope 100 float 3;
-#A 0 0.3 0.26 0.29 0.31 0.3 0.31 0.31 0.33 0.36 0.33 0.33 0.36 0.36
-0.4 0.41 0.45 0.41 0.43 0.45 0.48 0.5 0.5 0.46 0.43 0.39 0.42 0.42
-0.42 0.38 0.39 0.37 0.37 0.41 0.42 0.43 0.44 0.45 0.48 0.5 0.48 0.48
-0.49 0.53 0.55 0.55 0.57 0.54 0.52 0.51 0.53 0.51 0.51 0.52 0.49 0.46
-0.5 0.52 0.52 0.52 0.52 0.5 0.48 0.48 0.49 0.45 0.41 0.44 0.44 0.4
-0.36 0.39 0.4 0.41 0.37 0.4 0.43 0.39 0.39 0.35 0.35 0.35 0.38 0.38
-0.42 0.46 0.46 0.46 0.49 0.46 0.45 0.49 0.46 0.44 0.44 0.41 0.4 0.42
-0.39 0.38 0;
+#A 0 0.5 0.47 0.46 0.46 0.42 0.42 0.42 0.42 0.42 0.38 0.37 0.39 0.41
+0.4 0.37 0.37 0.41 0.38 0.42 0.39 0.37 0.41 0.43 0.46 0.48 0.51 0.5
+0.52 0.55 0.57 0.61 0.6 0.6 0.59 0.61 0.59 0.55 0.54 0.56 0.6 0.58
+0.55 0.55 0.55 0.53 0.54 0.55 0.58 0.59 0.59 0.6 0.6 0.59 0.57 0.6
+0.61 0.63 0.67 0.67 0.67 0.71 0.71 0.69 0.65 0.65 0.65 0.63 0.62 0.62
+0.63 0.63 0.63 0.59 0.56 0.6 0.56 0.53 0.49 0.49 0.52 0.54 0.54 0.51
+0.51 0.51 0.54 0.54 0.54 0.52 0.48 0.5 0.51 0.51 0.53 0.54 0.54 0.53
+0.53 0.54 0;
 #X coords 0 1 100 0 200 140 1 0 0;
 #X restore 22 202 graph;
 #X obj 239 171 array set \$0-envelope;
@@ -482,13 +489,13 @@
 #X connect 21 0 1 0;
 #X restore 8 98 pd timbre;
 #X obj 645 4 inlet voice_status;
-#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 645 49 switch~;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
-#X connect 3 0 11 1;
+#X connect 3 0 11 2;
 #X connect 3 0 17 0;
 #X connect 4 0 14 0;
 #X connect 5 0 2 1;
@@ -499,7 +506,7 @@
 #X connect 12 0 20 0;
 #X connect 12 0 16 0;
 #X connect 12 1 19 0;
-#X connect 12 2 11 2;
+#X connect 12 2 11 3;
 #X connect 12 2 17 1;
 #X connect 12 3 15 0;
 #X connect 14 0 12 0;
