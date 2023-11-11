@@ -1,4 +1,4 @@
-#N canvas 2 54 1916 1000 12;
+#N canvas 962 54 956 1000 12;
 #X obj 19 19 inlet list;
 #X obj 19 66 list-unique;
 #X obj 29 140 list-find;
@@ -17,6 +17,7 @@
 #X obj 96 405 outlet float;
 #X text 186 80 list-mode: Get the most common value in a list \;;
 #X obj 150 380 list-minmax;
+#X text 239 382 If more than one value \, outputs the greatest.;
 #X connect 0 0 6 0;
 #X connect 1 0 9 0;
 #X connect 2 1 3 0;
@@ -39,5 +40,5 @@
 #X connect 13 1 12 1;
 #X connect 14 0 15 0;
 #X connect 14 1 17 0;
-#X connect 17 0 15 0;
+#X connect 17 1 15 0;
 #X coords 0 0 0.125 0.125 0 0 0;
