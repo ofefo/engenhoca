@@ -1,16 +1,16 @@
-#N canvas 642 54 636 1000 12;
+#N canvas 2 54 956 1000 12;
 #X obj 8 325 clip~ -0.99 0.99;
 #X obj 8 277 hip~ 3;
 #X obj 8 302 *~, f 16;
-#X obj 197 144 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 174 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 8 4 inlet list;
-#X obj 117 278 expr $f1 * $f2, f 27;
-#X obj 506 4 inlet set_offset;
-#X obj 506 76 dbtorms;
+#X obj 117 278 expr $f1 * $f2, f 22;
+#X obj 510 4 inlet set_offset;
+#X obj 510 76 dbtorms;
 #X obj 8 349 hip~ 5;
-#X obj 8 373 outlet~;
-#N canvas 1282 54 636 1000 flat_env 1;
+#X obj 8 423 outlet~;
+#N canvas 1282 54 636 1000 flat_env 0;
 #X obj 11 13 inlet flatness_curve;
 #X obj 11 88 t l l, f 16;
 #N canvas 1442 54 476 1000 resize_interp 0;
@@ -118,23 +118,25 @@
 #X connect 20 0 21 1;
 #X connect 21 0 16 0;
 #X restore 8 253 pd add_noise;
-#X obj 8 74 unpack f f f f, f 37;
+#X obj 8 74 unpack f f f f, f 35;
 #X text 83 3 timbre \, midi \, ioi \, rms \, flatness curve;
-#X obj 264 100 expr (pow(10 \, $f1/20)*0.0001) + $f2;
-#N canvas 962 54 956 1000 wave_generation 0;
-#X obj 156 212 outlet~;
+#X obj 268 100 expr (pow(10 \, $f1/20)*0.0001) + $f2;
+#N canvas 962 54 956 1000 wave_generation 1;
+#X obj 156 272 outlet~;
 #X obj 113 16 inlet frequency;
 #X obj 23 16 inlet timbre;
-#X obj 113 138 osc~;
-#X obj 156 138 phasor~;
-#X obj 156 188 -~ 1;
-#X obj 156 162 *~ 2;
+#X obj 113 198 osc~;
+#X obj 156 198 phasor~;
+#X obj 156 248 -~ 1;
+#X obj 156 222 *~ 2;
 #X obj 156 42 +~;
 #X obj 224 16 inlet~ signal;
-#X obj 156 114 *~;
-#X obj 113 115 *~;
+#X obj 156 174 *~;
+#X obj 113 175 *~;
 #X obj 23 64 expr abs($f1-1);
 #X obj 23 40 < 4;
+#X text 40 308 To improve: a phasor is being selected when the timbre
+is percussive.;
 #X connect 1 0 7 0;
 #X connect 2 0 12 0;
 #X connect 3 0 0 0;
@@ -151,7 +153,7 @@
 #X connect 12 0 11 0;
 #X restore 8 228 pd wave_generation;
 #X f 24;
-#N canvas 1282 54 636 1000 envelope 0;
+#N canvas 642 54 636 1000 envelope 0;
 #X obj 11 11 inlet bang;
 #X obj 11 177 outlet rms;
 #X obj 91 11 inlet rms;
@@ -169,7 +171,7 @@
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
-#X restore 197 166 pd envelope;
+#X restore 174 143 pd envelope;
 #X text 270 72 timbre \, midi \, ioi \, rms;
 #N canvas 962 54 956 1000 modulator 0;
 #X obj 98 197 osc~;
@@ -204,7 +206,7 @@
 #X connect 14 0 6 0;
 #X connect 14 1 5 0;
 #X connect 14 2 13 0;
-#X restore 90 109 pd modulator;
+#X restore 91 169 pd modulator;
 #N canvas 962 54 956 1000 timbre 0;
 #N canvas 1280 32 640 1024 (subpatch) 0;
 #X array \$0-envelope 100 float 3;
@@ -491,10 +493,12 @@
 #X connect 21 0 1 0;
 #X restore 8 98 pd timbre;
 #X obj 645 4 inlet voice_status;
-#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 645 49 switch~;
 #X obj 8 29 list split 4;
+#X obj 8 373 hip~ 5;
+#X obj 8 397 hip~ 5;
 #X connect 0 0 8 0;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
@@ -504,7 +508,7 @@
 #X connect 5 0 2 1;
 #X connect 6 0 7 0;
 #X connect 7 0 14 1;
-#X connect 8 0 9 0;
+#X connect 8 0 24 0;
 #X connect 11 0 1 0;
 #X connect 12 0 19 0;
 #X connect 12 0 15 0;
@@ -523,4 +527,6 @@
 #X connect 21 0 22 0;
 #X connect 23 0 12 0;
 #X connect 23 1 10 0;
+#X connect 24 0 25 0;
+#X connect 25 0 9 0;
 #X coords 0 0 0.5 0.5 0 0 0;
