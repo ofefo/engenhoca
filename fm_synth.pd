@@ -1,8 +1,8 @@
-#N canvas 2 54 956 1000 12;
+#N canvas 642 54 636 1000 12;
 #X obj 8 325 clip~ -0.99 0.99;
 #X obj 8 277 hip~ 3;
 #X obj 8 302 *~, f 16;
-#X obj 174 121 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 156 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 8 4 inlet list;
 #X obj 117 278 expr $f1 * $f2, f 22;
@@ -10,10 +10,10 @@
 #X obj 510 76 dbtorms;
 #X obj 8 349 hip~ 5;
 #X obj 8 423 outlet~;
-#N canvas 1282 54 636 1000 flat_env 0;
+#N canvas 962 54 956 1000 flat_env 0;
 #X obj 11 13 inlet flatness_curve;
 #X obj 11 88 t l l, f 16;
-#N canvas 1442 54 476 1000 resize_interp 0;
+#N canvas 1282 54 636 1000 resize_interp 0;
 #X obj 89 283 f;
 #X obj 89 255 until;
 #X obj 89 207 t b b;
@@ -35,7 +35,7 @@
 #X obj 89 37 t b b f f;
 #X obj 11 126 array set \$0-flat_env_in;
 #X obj 201 239 array define \$0-flat_env_out 99;
-#X text 281 36 Resizes an array containing the flatness curve to match
+#X text 201 126 Resizes an array containing the flatness curve to match
 99 values and interpolate them with tabread4.;
 #X connect 0 0 3 0;
 #X connect 0 0 4 0;
@@ -71,7 +71,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 1 0;
 #X restore 48 53 pd flat_env;
-#N canvas 962 54 956 1000 add_noise 1;
+#N canvas 962 54 956 1000 add_noise 0;
 #X obj 208 35 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 208 106 vline~;
@@ -121,24 +121,25 @@
 #X obj 8 74 unpack f f f f, f 35;
 #X text 83 3 timbre \, midi \, ioi \, rms \, flatness curve;
 #X obj 268 100 expr (pow(10 \, $f1/20)*0.0001) + $f2;
-#N canvas 962 54 956 1000 wave_generation 0;
-#X obj 156 272 outlet~;
+#N canvas 1282 54 636 1000 wave_generation 1;
+#X obj 156 282 outlet~;
 #X obj 113 16 inlet frequency;
 #X obj 23 16 inlet timbre;
-#X obj 113 198 osc~;
-#X obj 156 198 phasor~;
-#X obj 156 248 -~ 1;
-#X obj 156 222 *~ 2;
+#X obj 113 208 osc~;
+#X obj 156 208 phasor~;
+#X obj 156 258 -~ 1;
+#X obj 156 232 *~ 2;
 #X obj 156 42 +~;
 #X obj 224 16 inlet~ signal;
-#X obj 156 174 *~;
-#X obj 113 175 *~;
-#X obj 23 64 expr abs($f1-1);
-#X obj 23 40 < 4;
-#X text 40 308 To improve: a phasor is being selected when the timbre
-is percussive.;
+#X obj 156 184 *~;
+#X obj 113 185 *~;
+#X obj 23 138 expr abs($f1-1);
+#X obj 23 114 < 4;
+#X obj 23 90 random;
+#X obj 23 41 t b f;
+#X obj 55 64 + 1;
 #X connect 1 0 7 0;
-#X connect 2 0 12 0;
+#X connect 2 0 14 0;
 #X connect 3 0 0 0;
 #X connect 4 0 6 0;
 #X connect 5 0 0 0;
@@ -148,12 +149,16 @@ is percussive.;
 #X connect 8 0 7 1;
 #X connect 9 0 4 0;
 #X connect 10 0 3 0;
-#X connect 11 0 10 1;
-#X connect 12 0 9 1;
+#X connect 11 0 9 1;
 #X connect 12 0 11 0;
+#X connect 12 0 10 1;
+#X connect 13 0 12 0;
+#X connect 14 0 13 0;
+#X connect 14 1 15 0;
+#X connect 15 0 13 1;
 #X restore 8 228 pd wave_generation;
-#X f 24;
-#N canvas 642 54 636 1000 envelope 0;
+#X f 19;
+#N canvas 962 54 956 1000 envelope 0;
 #X obj 11 11 inlet bang;
 #X obj 11 177 outlet rms;
 #X obj 91 11 inlet rms;
@@ -171,7 +176,7 @@ is percussive.;
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
-#X restore 174 143 pd envelope;
+#X restore 156 153 pd envelope;
 #X text 270 72 timbre \, midi \, ioi \, rms;
 #N canvas 962 54 956 1000 modulator 0;
 #X obj 98 197 osc~;
@@ -206,8 +211,8 @@ is percussive.;
 #X connect 14 0 6 0;
 #X connect 14 1 5 0;
 #X connect 14 2 13 0;
-#X restore 91 169 pd modulator;
-#N canvas 962 54 956 1000 timbre 0;
+#X restore 73 179 pd modulator;
+#N canvas 1282 54 636 1000 timbre 0;
 #N canvas 1280 32 640 1024 (subpatch) 0;
 #X array \$0-envelope 100 float 3;
 #A 0 0.75 0.756 0.761 0.767 0.772 0.778 0.783 0.789 0.794 0.8 0.81
@@ -221,8 +226,8 @@ is percussive.;
 0.012 0.01 0.001 0;
 #X coords 0 1 100 0 200 140 1 0 0;
 #X restore 22 202 graph;
-#X obj 239 171 array set \$0-envelope;
-#N canvas 642 54 636 1000 clarinet 0;
+#X obj 239 151 array set \$0-envelope;
+#N canvas 1282 54 636 1000 clarinet 0;
 #X obj 1 225 outlet;
 #X obj 1 6 inlet;
 #X msg 1 32 0 0.01 0.025 0.05 0.075 0.1 0.125 0.15 0.175 0.2 0.25 0.3
@@ -251,19 +256,19 @@ is percussive.;
 #X connect 8 0 4 0;
 #X connect 9 0 4 1;
 #X connect 10 0 5 0;
-#X restore 298 121 pd clarinet;
-#X obj 298 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 383 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 11 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X restore 298 101 pd clarinet;
+#X obj 298 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 67 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 383 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 123 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 239 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X obj 11 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 67 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 123 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 239 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #N canvas 1282 54 636 1000 trumpet 0;
 #X obj 1 213 outlet;
 #X obj 1 3 inlet;
@@ -289,7 +294,7 @@ is percussive.;
 #X connect 5 1 7 0;
 #X connect 6 0 4 0;
 #X connect 7 0 4 1;
-#X restore 383 121 pd trumpet;
+#X restore 383 101 pd trumpet;
 #N canvas 1282 54 636 1000 bell 0;
 #X obj 1 129 outlet;
 #X obj 1 3 inlet;
@@ -307,7 +312,7 @@ is percussive.;
 #X connect 1 0 4 0;
 #X connect 2 0 0 0;
 #X connect 4 0 3 0;
-#X restore 11 121 pd bell;
+#X restore 11 101 pd bell;
 #N canvas 1282 54 636 1000 drum 0;
 #X obj 1 187 outlet;
 #X obj 1 3 inlet;
@@ -333,7 +338,7 @@ is percussive.;
 #X connect 5 0 7 1;
 #X connect 6 0 7 0;
 #X connect 7 0 3 0;
-#X restore 67 121 pd drum;
+#X restore 67 101 pd drum;
 #N canvas 1282 54 636 1000 wood 0;
 #X obj 1 141 outlet;
 #X obj 1 3 inlet;
@@ -354,7 +359,7 @@ is percussive.;
 #X connect 5 0 3 0;
 #X connect 6 0 5 1;
 #X connect 7 0 5 0;
-#X restore 123 121 pd wood;
+#X restore 123 101 pd wood;
 #N canvas 962 54 476 1000 bird 0;
 #X obj 9 163 outlet;
 #X obj 9 6 inlet;
@@ -375,13 +380,13 @@ is percussive.;
 #X connect 5 0 3 0;
 #X connect 6 0 3 1;
 #X connect 7 0 0 0;
-#X restore 239 121 pd bird;
-#X obj 461 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X restore 239 101 pd bird;
+#X obj 461 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X obj 11 7 inlet timbre;
 #N canvas 1282 54 636 1000 expo 0;
 #X obj 9 222 outlet;
-#X obj 9 16 inlet;
+#X obj 8 16 inlet;
 #X obj 67 223 s \$0-modulating;
 #X obj 67 198 pack f f;
 #X obj 67 147 t b b;
@@ -408,9 +413,9 @@ is percussive.;
 #X connect 8 0 0 0;
 #X connect 8 1 9 0;
 #X connect 9 0 8 1;
-#X restore 461 121 pd expo;
-#X obj 179 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
+#X restore 461 101 pd expo;
+#X obj 179 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #N canvas 1282 54 636 1000 rand 0;
 #X obj 9 383 outlet;
 #X obj 9 16 inlet;
@@ -442,10 +447,10 @@ is percussive.;
 #X connect 11 0 6 0;
 #X connect 12 0 7 0;
 #X connect 13 0 3 0;
-#X restore 179 121 pd rand;
-#X obj 519 103 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 11 57 sel 0 1 2 3 4 5 6 7 8, f 73;
+#X restore 179 101 pd rand;
+#X obj 519 83 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 11 37 sel 0 1 2 3 4 5 6 7 8, f 73;
 #N canvas 962 54 956 1000 rand-lin 0;
 #X obj 9 202 outlet;
 #X obj 9 16 inlet;
@@ -467,7 +472,7 @@ is percussive.;
 #X connect 7 0 3 1;
 #X connect 8 0 3 0;
 #X connect 9 0 0 0;
-#X restore 519 121 pd rand-lin;
+#X restore 519 101 pd rand-lin;
 #X connect 2 0 1 0;
 #X connect 3 0 2 0;
 #X connect 4 0 9 0;
