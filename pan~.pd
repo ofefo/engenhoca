@@ -1,4 +1,4 @@
-#N canvas 950 96 960 984 12;
+#N canvas 920 96 960 984 12;
 #X obj 23 264 *~;
 #X obj 108 265 *~;
 #X obj 126 26 noise~;
@@ -17,10 +17,10 @@
 #X obj 41 241 line;
 #X obj 126 217 pack f f;
 #X obj 126 241 line;
-#X obj 108 290 *~ 0.5;
 #X obj 23 289 *~ 0.5;
-#X connect 0 0 19 0;
-#X connect 1 0 18 0;
+#X obj 108 290 *~ 0.5;
+#X connect 0 0 18 0;
+#X connect 1 0 19 0;
 #X connect 2 0 3 0;
 #X connect 3 0 7 0;
 #X connect 3 0 13 0;
@@ -39,5 +39,5 @@
 #X connect 15 0 0 1;
 #X connect 16 0 17 0;
 #X connect 17 0 1 1;
-#X connect 18 0 10 0;
-#X connect 19 0 9 0;
+#X connect 18 0 9 0;
+#X connect 19 0 10 0;
