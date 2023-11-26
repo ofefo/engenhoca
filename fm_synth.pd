@@ -1,15 +1,14 @@
-#N canvas 642 54 636 1000 12;
-#X obj 8 325 clip~ -0.99 0.99;
-#X obj 8 277 hip~ 3;
-#X obj 8 302 *~, f 16;
-#X obj 156 131 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#N canvas 2 54 1916 1000 12;
+#X obj 8 301 clip~ -0.99 0.99;
+#X obj 8 278 *~, f 16;
+#X obj 171 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 8 4 inlet list;
-#X obj 117 278 expr $f1 * $f2, f 22;
+#X obj 117 254 expr $f1 * $f2, f 22;
 #X obj 510 4 inlet set_offset;
 #X obj 510 76 dbtorms;
-#X obj 8 349 hip~ 5;
-#X obj 8 423 outlet~;
+#X obj 8 329 hip~ 5;
+#X obj 8 403 outlet~;
 #N canvas 962 54 956 1000 flat_env 0;
 #X obj 11 13 inlet flatness_curve;
 #X obj 11 88 t l l, f 16;
@@ -121,7 +120,7 @@
 #X obj 8 74 unpack f f f f, f 35;
 #X text 83 3 timbre \, midi \, ioi \, rms \, flatness curve;
 #X obj 268 100 expr (pow(10 \, $f1/20)*0.0001) + $f2;
-#N canvas 1282 54 636 1000 wave_generation 1;
+#N canvas 962 54 956 1000 wave_generation 0;
 #X obj 156 282 outlet~;
 #X obj 113 16 inlet frequency;
 #X obj 23 16 inlet timbre;
@@ -157,7 +156,7 @@
 #X connect 14 1 15 0;
 #X connect 15 0 13 1;
 #X restore 8 228 pd wave_generation;
-#X f 19;
+#X f 21;
 #N canvas 962 54 956 1000 envelope 0;
 #X obj 11 11 inlet bang;
 #X obj 11 177 outlet rms;
@@ -176,7 +175,7 @@
 #X connect 6 0 4 0;
 #X connect 7 0 4 0;
 #X connect 8 0 5 0;
-#X restore 156 153 pd envelope;
+#X restore 171 186 pd envelope;
 #X text 270 72 timbre \, midi \, ioi \, rms;
 #N canvas 962 54 956 1000 modulator 0;
 #X obj 98 197 osc~;
@@ -211,19 +210,21 @@
 #X connect 14 0 6 0;
 #X connect 14 1 5 0;
 #X connect 14 2 13 0;
-#X restore 73 179 pd modulator;
+#X restore 80 186 pd modulator;
 #N canvas 1282 54 636 1000 timbre 0;
 #N canvas 1280 32 640 1024 (subpatch) 0;
 #X array \$0-envelope 100 float 3;
-#A 0 0.75 0.756 0.761 0.767 0.772 0.778 0.783 0.789 0.794 0.8 0.81
-0.827 0.847 0.865 0.882 0.899 0.914 0.929 0.944 0.95 0.955 0.96 0.965
-0.97 0.975 0.98 0.985 0.99 0.995 1 1 0.935 0.875 0.819 0.766 0.716
-0.67 0.627 0.586 0.548 0.513 0.48 0.449 0.42 0.393 0.367 0.344 0.322
-0.301 0.281 0.263 0.246 0.23 0.215 0.202 0.189 0.176 0.165 0.154 0.144
-0.135 0.126 0.118 0.111 0.103 0.097 0.09 0.085 0.079 0.074 0.069 0.065
-0.061 0.057 0.053 0.05 0.046 0.043 0.041 0.038 0.036 0.033 0.031 0.029
-0.027 0.025 0.024 0.022 0.021 0.019 0.018 0.017 0.016 0.015 0.014 0.013
-0.012 0.01 0.001 0;
+#A 0 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5
+0.505933 0.534 0.5732 0.520733 0.5248 0.614133 0.611767 0.57 0.5567
+0.601 0.670933 0.6346 0.6872 0.7184 0.625333 0.6032 0.552933 0.7439
+0.7487 0.6688 0.643 0.703233 0.5882 0.529767 0.740533 0.712567 0.561267
+0.716067 0.5933 0.6252 0.562933 0.658167 0.5318 0.563867 0.6922 0.5965
+0.7904 0.5971 0.6946 0.565067 0.7608 0.663333 0.761867 0.729367 0.664167
+0.631467 0.5329 0.730767 0.599 0.533 0.5991 0.764533 0.7648 0.6655
+0.765067 0.699 0.5995 0.533167 0.6328 0.6992 0.632933 0.6994 0.533233
+0.632933 0.732867 0.6996 0.6996 0.6996 0.7994 0.5999 0.7331 0.7664
+0.7664 0.6665 0.6998 0.5999 0.7664 0.7331 0.7997 0.5666 0.7331 0.6
+0.5 0;
 #X coords 0 1 100 0 200 140 1 0 0;
 #X restore 22 202 graph;
 #X obj 239 151 array set \$0-envelope;
@@ -503,41 +504,40 @@
 #X connect 21 0 1 0;
 #X restore 8 98 pd timbre;
 #X obj 645 4 inlet voice_status;
-#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 645 29 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 645 49 switch~;
 #X obj 8 29 list split 4;
-#X obj 8 373 hip~ 5;
-#X obj 8 397 hip~ 5;
-#X connect 0 0 8 0;
-#X connect 1 0 2 0;
-#X connect 2 0 0 0;
-#X connect 3 0 11 2;
-#X connect 3 0 16 0;
-#X connect 4 0 23 0;
-#X connect 5 0 2 1;
-#X connect 6 0 7 0;
-#X connect 7 0 14 1;
-#X connect 8 0 24 0;
-#X connect 11 0 1 0;
-#X connect 12 0 19 0;
-#X connect 12 0 15 0;
-#X connect 12 1 18 0;
-#X connect 12 1 11 1;
-#X connect 12 2 11 3;
-#X connect 12 2 16 1;
-#X connect 12 3 14 0;
-#X connect 14 0 5 1;
-#X connect 15 0 11 0;
-#X connect 16 0 5 0;
-#X connect 16 0 18 1;
-#X connect 18 0 15 1;
-#X connect 18 0 3 0;
-#X connect 18 1 15 2;
+#X obj 8 353 hip~ 5;
+#X obj 8 377 hip~ 5;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 10 2;
+#X connect 2 0 15 0;
+#X connect 3 0 22 0;
+#X connect 4 0 1 1;
+#X connect 5 0 6 0;
+#X connect 6 0 13 1;
+#X connect 7 0 23 0;
+#X connect 10 0 1 0;
+#X connect 11 0 18 0;
+#X connect 11 0 14 0;
+#X connect 11 1 17 0;
+#X connect 11 1 10 1;
+#X connect 11 2 10 3;
+#X connect 11 2 15 1;
+#X connect 11 3 13 0;
+#X connect 13 0 4 1;
+#X connect 14 0 10 0;
+#X connect 15 0 4 0;
+#X connect 15 0 17 1;
+#X connect 17 0 14 1;
+#X connect 17 0 2 0;
+#X connect 17 1 14 2;
+#X connect 19 0 20 0;
 #X connect 20 0 21 0;
-#X connect 21 0 22 0;
-#X connect 23 0 12 0;
-#X connect 23 1 10 0;
-#X connect 24 0 25 0;
-#X connect 25 0 9 0;
+#X connect 22 0 11 0;
+#X connect 22 1 9 0;
+#X connect 23 0 24 0;
+#X connect 24 0 8 0;
 #X coords 0 0 0.5 0.5 0 0 0;
