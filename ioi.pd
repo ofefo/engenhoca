@@ -1,8 +1,0 @@
-#N canvas 1282 54 636 1000 12;
-#X obj 7 116 timer;
-#X obj 7 10 inlet onset;
-#X obj 7 140 outlet ms;
-#X obj 97 10 inlet offset;
-#X connect 0 0 2 0;
-#X connect 1 0 0 0;
-#X connect 3 0 0 1;
