@@ -12,3 +12,4 @@ You should be able to get most libraries needed using Deken (Help > Find externa
 * list-abs
 * cyclone
 * [kmeans](https://github.com/AdrianoMonteiro/kmeans-PD)
+* [quacktrip](https://msp.ucsd.edu/tools/quacktrip/)
