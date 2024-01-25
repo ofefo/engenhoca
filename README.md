@@ -6,6 +6,7 @@ WIP
 ## Requirements
 You should be able to get most libraries needed using Deken (Help > Find externals) directly on PD.
 * freeverb~
+* else
 * timbreID
 * mjlib
 * list-abs
