@@ -1,4 +1,4 @@
-#N canvas 2 54 1916 1000 12;
+#N canvas 2 54 636 1000 12;
 #X obj 71 290 spigot;
 #X obj 71 313 outlet;
 #X obj 71 4 inlet onset;
@@ -26,17 +26,17 @@
 #X obj 209 198 pack;
 #X obj 454 4 inlet legato_mean;
 #X obj 246 4 inlet oct_prob;
-#N canvas 962 54 956 1000 timbre 0;
+#N canvas 642 54 636 1000 timbre 1;
 #X obj 13 13 inlet bang;
 #X obj 92 13 inlet ioi_mean;
 #X obj 13 38 f 0;
 #X obj 13 63 + 1;
 #X obj 13 88 %;
 #X obj 13 113 sel 0;
-#X obj 13 165 outlet;
+#X obj 13 164 outlet;
 #X obj 92 38 expr if($f1 < 400 \, 30 \, rint(1000 / ($f1/12.)));
 #X obj 13 139 random 11;
-#X text 15 183 The frequency at which a new timbre is chosen varies
+#X text 60 81 The frequency at which a new timbre is chosen varies
 according to the mean duration found in the last phrase.;
 #X connect 0 0 2 0;
 #X connect 1 0 7 0;
