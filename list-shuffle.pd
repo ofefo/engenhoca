@@ -77,7 +77,7 @@
 #X restore 49 96 pd any2symbol;
 #X obj 96 9 inlet list;
 #X obj 17 9 inlet bang;
-#X obj 58 242 outlet list;
+#X obj 57 242 outlet list;
 #X obj 17 39 list store;
 #X connect 0 0 3 0;
 #X connect 0 0 8 0;
