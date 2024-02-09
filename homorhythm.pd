@@ -22,7 +22,7 @@
 #X restore 238 165 pd octave;
 #X obj 354 6 inlet ioi_mean;
 #X obj 583 6 inlet rms;
-#X obj 436 173 f;
+#X obj 436 175 f;
 #X obj 213 190 pack;
 #X obj 458 6 inlet legato_mean;
 #X obj 250 6 inlet oct_prob;
@@ -60,18 +60,18 @@ according to the mean duration found in the last phrase.;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
 #X restore 652 29 pd make_list;
-#X obj 436 197 list;
+#X obj 436 199 list;
 #X obj 302 210 list;
 #X obj 302 239 list;
 #X text 153 266 This abstraction concatenates values for timbre \,
 pitch \, duration \, amplitude (rms) and flatness curve into a single
 list.;
 #X obj 238 141 pick-random;
-#X obj 393 220 list;
+#X obj 393 219 list;
 #X obj 75 32 t b b b b b b, f 52;
-#X obj 393 197 f;
-#X obj 454 149 min 99;
-#X obj 454 125 * 1.1;
+#X obj 393 196 f;
+#X obj 454 151 min 99;
+#X obj 454 127 * 1.1;
 #X connect 0 0 1 0;
 #X connect 2 0 25 0;
 #X connect 3 0 16 0;
