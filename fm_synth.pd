@@ -1,4 +1,4 @@
-#N canvas 962 54 476 1000 12;
+#N canvas 1282 54 636 1000 12;
 #X obj 8 233 *~, f 24;
 #X obj 175 129 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -91,7 +91,7 @@
 #X connect 9 0 10 1;
 #X connect 10 0 7 1;
 #X restore 175 150 pd envelope;
-#N canvas 1538 54 380 1000 modulator 0;
+#N canvas 559 54 1359 1000 modulator 0;
 #X obj 88 155 osc~;
 #X obj 88 188 *~;
 #X obj 106 29 mtof;
@@ -126,7 +126,7 @@
 #X connect 14 1 12 0;
 #X connect 15 0 3 0;
 #X restore 83 150 pd modulator;
-#N canvas 642 54 636 1000 timbre 0;
+#N canvas 2 54 1916 1000 timbre 1;
 #X obj 320 315 array set \$0-envelope;
 #N canvas 2 406 956 296 clarinet 0;
 #X obj 11 225 outlet;
@@ -258,10 +258,10 @@ f 135;
 #X connect 8 0 5 1;
 #X connect 8 0 7 0;
 #X restore 146 245 pd wood;
-#N canvas 962 54 476 1000 bird 0;
-#X obj 9 208 outlet;
+#N canvas 559 54 1359 472 bird 0;
+#X obj 9 199 outlet;
 #X obj 9 6 inlet;
-#X obj 67 208 s \$0-modulating;
+#X obj 67 199 s \$0-modulating;
 #X msg 9 30 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.001 0.001 0.001 0.001
 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.001 0.002 0.002 0.002 0.002
 0.002 0.003 0.003 0.003 0.003 0.004 0.004 0.005 0.005 0.005 0.006 0.007
@@ -270,18 +270,20 @@ f 135;
 0.067 0.074 0.081 0.089 0.098 0.107 0.118 0.129 0.142 0.156 0.171 0.187
 0.206 0.226 0.248 0.272 0.298 0.327 0.359 0.394 0.433 0.475 0.521 0.572
 0.628 0.689 0.756 0.83 0.911 1, f 134;
-#X obj 67 181 pack f f;
-#X obj 67 109 t b b;
-#X obj 67 154 expr random(10 \, 100) * 0.01;
-#X obj 120 129 expr random(75 \, 100) * 0.01;
+#X obj 67 175 pack f f;
+#X obj 67 103 expr random(60 \, 100);
+#X obj 67 151 * 0.0001;
+#X obj 129 151 random 1000;
+#X obj 67 127 t f b;
 #X connect 1 0 3 0;
 #X connect 1 0 5 0;
 #X connect 3 0 0 0;
 #X connect 4 0 2 0;
-#X connect 5 0 6 0;
-#X connect 5 1 7 0;
+#X connect 5 0 8 0;
 #X connect 6 0 4 0;
 #X connect 7 0 4 1;
+#X connect 8 0 6 0;
+#X connect 8 1 7 0;
 #X restore 265 245 pd bird;
 #X obj 479 227 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -447,7 +449,7 @@ f 135;
 #N canvas 962 54 956 1000 random 0;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array \$0-random_env 10 float 3;
-#A 0 0 0.87 0.41 0.56 0.4 0.56 0.83 0.28 0.04 0;
+#A 0 0 0.56 0.61 0.38 0.17 0.69 0.76 0.53 0.26 0;
 #X coords 0 0 10 1 200 140 1 0 0;
 #X restore 379 111 graph;
 #N canvas 2 758 956 296 random 0;
@@ -630,7 +632,7 @@ f 135;
 #X obj 8 32 list split 5;
 #X text 83 6 timbre \, midi \, dur \, legato \, rms \, flatness curve
 ;
-#N canvas 2 54 1916 1000 wave 0;
+#N canvas 1602 84 316 970 wave 0;
 #X obj 181 273 outlet~;
 #X obj 102 14 inlet frequency;
 #X obj 12 14 inlet timbre;
@@ -836,7 +838,7 @@ f 135;
 #X coords 0 0 0 0 0 0 0;
 #X restore 8 177 pd wave generation;
 #X f 22;
-#N canvas 1442 54 476 1000 add 1;
+#N canvas 962 54 956 1000 add 0;
 #X obj 15 215 outlet~;
 #X obj 15 66 noise~;
 #X obj 48 18 inlet midi;
