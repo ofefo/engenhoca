@@ -1,12 +1,5 @@
-#N struct 1168-f float x;
-#N struct 1173-f float x;
-#N struct 1213-f float x;
-#N struct 1239-f float x;
-#N struct 1343-f float x;
-#N struct 1345-f float x;
-#N struct 1359-f float x;
-#N struct 1361-f float x;
-#N canvas 962 54 956 1000 12;
+#N struct 1009-f float x;
+#N canvas 2 54 956 1000 12;
 #X obj 5 5 inlet;
 #N canvas 1282 54 636 1000 pitch 0;
 #X obj 5 8 inlet bang;
@@ -1027,9 +1020,9 @@ last pitch class set played is transformed by one randomly chosen function.
 #X f 45;
 #X obj 327 5 inlet legato;
 #X obj 417 5 inlet flat_curve;
-#N canvas 962 54 956 1000 dynamics 0;
+#N canvas 962 54 956 1000 dynamics 1;
 #X obj 11 13 inlet bang;
-#N canvas 1282 54 636 1000 same 0;
+#N canvas 1442 54 476 1000 same 0;
 #X obj 10 15 inlet bang;
 #X obj 89 15 inlet list;
 #X obj 10 49 list store;
@@ -1038,7 +1031,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X connect 1 0 2 1;
 #X connect 2 0 3 0;
 #X restore 64 188 pd same;
-#N canvas 1282 54 636 1000 ost 0;
+#N canvas 1442 54 476 1000 ost 0;
 #X obj 10 15 inlet bang;
 #X obj 174 15 inlet list;
 #X obj 10 369 list store;
@@ -1081,7 +1074,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X connect 15 1 16 0;
 #X connect 16 0 12 0;
 #X restore 235 188 pd ost;
-#N canvas 1282 54 636 1000 cres 0;
+#N canvas 1442 54 476 1000 cres 0;
 #X obj 10 15 inlet bang;
 #X obj 144 15 inlet list;
 #X obj 10 129 list store;
@@ -1097,7 +1090,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X connect 5 0 6 0;
 #X connect 6 0 2 1;
 #X restore 121 188 pd cres;
-#N canvas 1282 54 636 1000 dim 0;
+#N canvas 1442 54 476 1000 dim 0;
 #X obj 10 15 inlet bang;
 #X obj 144 15 inlet list;
 #X obj 10 129 list store;
