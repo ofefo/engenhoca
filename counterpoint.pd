@@ -1,11 +1,18 @@
-#N struct 1009-f float x;
+#N struct 1169-f float x;
+#N struct 1174-f float x;
+#N struct 1214-f float x;
+#N struct 1240-f float x;
+#N struct 1344-f float x;
+#N struct 1346-f float x;
+#N struct 1360-f float x;
+#N struct 1362-f float x;
 #N canvas 2 54 1916 1000 12;
 #X obj 5 5 inlet;
-#N canvas 1282 54 636 1000 pitch 0;
+#N canvas 962 54 956 1000 pitch 0;
 #X obj 5 8 inlet bang;
 #X obj 126 56 list store, f 13;
 #X obj 287 199 outlet;
-#N canvas 1154 54 380 1000 mult 0;
+#N canvas 1282 54 636 1000 mult 0;
 #X obj 4 4 inlet bang;
 #X obj 103 4 inlet list;
 #X obj 4 285 list store;
@@ -71,7 +78,7 @@
 #X connect 24 0 10 0;
 #X connect 25 0 21 2;
 #X restore 230 138 pd mult;
-#N canvas 962 54 956 1000 asc 0;
+#N canvas 1282 54 636 1000 asc 0;
 #X obj 10 15 inlet bang;
 #X obj 89 15 inlet list;
 #X obj 10 69 list store;
@@ -97,7 +104,7 @@
 #X connect 8 1 5 0;
 #X connect 10 0 2 1;
 #X restore 61 138 pd asc;
-#N canvas 962 54 956 1000 desc 0;
+#N canvas 1282 54 636 1000 desc 0;
 #X obj 19 19 inlet bang;
 #X obj 104 19 inlet list;
 #X obj 19 73 list store;
@@ -123,7 +130,7 @@
 #X connect 8 1 5 0;
 #X connect 9 0 2 1;
 #X restore 117 138 pd desc;
-#N canvas 962 54 956 1000 tran 0;
+#N canvas 1282 54 636 1000 tran 0;
 #X obj 10 15 inlet bang;
 #X obj 109 15 inlet list;
 #X obj 10 88 list store;
@@ -1024,7 +1031,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X obj 417 5 inlet flat_curve;
 #N canvas 962 54 956 1000 dynamics 0;
 #X obj 11 13 inlet bang;
-#N canvas 1442 54 476 1000 same 0;
+#N canvas 1282 54 636 1000 same 0;
 #X obj 10 15 inlet bang;
 #X obj 89 15 inlet list;
 #X obj 10 49 list store;
@@ -1076,7 +1083,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X connect 15 1 16 0;
 #X connect 16 0 12 0;
 #X restore 235 188 pd ost;
-#N canvas 1442 54 476 1000 cres 0;
+#N canvas 1282 54 636 1000 cres 0;
 #X obj 10 15 inlet bang;
 #X obj 144 15 inlet list;
 #X obj 10 129 list store;
@@ -1151,7 +1158,7 @@ last pitch class set played is transformed by one randomly chosen function.
 #X connect 16 3 2 0;
 #X connect 17 0 16 0;
 #X connect 18 0 15 0;
-#X restore 376 128 pd dynamics;
+#X restore 370 128 pd dynamics;
 #X f 12;
 #X obj 18 104 t b b b b b b, f 45;
 #X obj 242 5 inlet pitch;
@@ -1199,7 +1206,7 @@ with a amplitude value.;
 #X connect 4 0 2 0;
 #X connect 5 0 4 1;
 #X connect 6 0 5 0;
-#X restore 336 159 pd amp+flat;
+#X restore 330 159 pd amp+flat;
 #X f 12;
 #X text 67 215 This abstraction concatenates values for timbre \, pitch
 \, duration \, legato \, amplitude and flatness curve into a single
