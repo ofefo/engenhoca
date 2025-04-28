@@ -3,8 +3,8 @@ Developed by Felippe Brandão;
 To start a performance, use the on/off toggle to measure your background
 noise (you should be quiet for a few seconds);
 Then, chose if you would like to hear the machine playing audio or
-MIDI (that you must configure to what you like);
-After that, press START to begin improvising! Por Felippe Brandão
+MIDI;
+After that, press START to begin improvising!
 ;
 ---------------------------------------------------------------------------------------------------------
 ;
