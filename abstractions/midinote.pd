@@ -1,4 +1,4 @@
-#N canvas 962 54 956 1000 12;
+#N canvas 2 54 1916 1000 12;
 #X obj 22 20 inlet;
 #X obj 49 189 makenote;
 #X obj 49 221 outlet note;
