@@ -1,5 +1,6 @@
 # Engenhoca
-A prototype for a improvising machine made in Pure Data.\\
+A prototype for a improvising machine made in Pure Data.
+
 Work in progress.
 
 ## Requirements
