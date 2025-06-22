@@ -1,12 +1,10 @@
 # Engenhoca
-
-A prototype for a improvising machine made in Pure Data.
+A prototype for a improvising machine made in Pure Data.\\
 Work in progress.
 
 ## Requirements
-You should be able to get most libraries needed using Deken (Help > Find externals) directly on PD.
+engenhoca depends on the following libraries, which you should be able to download via Deken (Help > Find externals), directly from PD.
 * else
 * timbreID
-* list-abs
-* cyclone
-* [kmeans](https://github.com/AdrianoMonteiro/kmeans-PD) (must be compiled)
+* [kmeans](https://github.com/AdrianoMonteiro/kmeans-PD) (must be compiled from source)
+* list-abs (no need to download: already included in the abstractions folder)

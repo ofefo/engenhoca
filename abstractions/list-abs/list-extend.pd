@@ -1,0 +1,13 @@
+#N canvas 1231 54 687 1000 10;
+#X obj 37 41 inlet;
+#X obj 116 66 inlet;
+#X obj 37 257 outlet;
+#X text 32 21 add new elements to stored list and output it;
+#X text 116 47 set stored list \, no output;
+#X obj 37 153 list prepend;
+#X obj 132 153 t a;
+#X connect 0 0 5 0;
+#X connect 1 0 5 1;
+#X connect 5 0 6 0;
+#X connect 5 0 2 0;
+#X connect 6 0 5 1;
