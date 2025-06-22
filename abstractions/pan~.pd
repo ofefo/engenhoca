@@ -1,4 +1,4 @@
-#N canvas 1282 54 636 1000 12;
+#N canvas 642 54 636 1000 12;
 #X obj 16 207 *~;
 #X obj 91 207 *~;
 #X obj 16 13 inlet~;
@@ -13,12 +13,12 @@
 #X obj 109 156 line;
 #X obj 34 182 osc~;
 #X obj 109 182 osc~;
-#X obj 235 13 inlet event;
+#X obj 315 13 inlet event;
 #X obj 109 37 / 100;
-#X obj 235 64 unpack f f f f f, f 17;
-#X obj 235 37 list split 5;
-#X obj 235 88 bang;
-#X obj 109 13 drunk 100 10;
+#X obj 315 64 unpack f f f f f, f 17;
+#X obj 315 37 list split 5;
+#X obj 315 88 bang;
+#X obj 109 12 else/drunkard -p 75 10 0 100;
 #X connect 0 0 6 0;
 #X connect 1 0 7 0;
 #X connect 2 0 0 0;
