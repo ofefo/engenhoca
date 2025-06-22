@@ -1,4 +1,4 @@
-#N canvas 642 54 636 1000 12;
+#N canvas 0 22 956 1000 12;
 #X obj 75 369 spigot;
 #X obj 75 392 outlet;
 #X obj 6 6 inlet sel;
@@ -27,9 +27,7 @@
 #X obj 272 262 list;
 #X obj 272 239 f;
 #X obj 441 6 inlet amp;
-#X text 156 309 This abstraction concatenates values for timbre \,
-pitch \, duration \, amplitude and flatness curve into a single list.
-;
+#X text 156 309 This abstraction concatenates values for timbre \, pitch \, duration \, amplitude and flatness curve into a single list.;
 #N canvas 962 54 956 1000 pitch 0;
 #X obj 3 85 outlet pitch;
 #X obj 3 7 inlet bang;
@@ -47,25 +45,25 @@ pitch \, duration \, amplitude and flatness curve into a single list.
 #X obj 511 105 list trim;
 #X obj 511 81 list prepend flat;
 #X obj 75 6 inlet dur;
-#N canvas 1282 54 636 1000 metro 1;
+#N canvas 1282 54 956 1000 metro 1;
 #X obj 152 9 inlet dur;
 #X obj 106 149 f;
 #X obj 6 34 change;
 #X obj 106 83 sel 1;
-#X obj 6 148 metro;
 #X obj 106 183 outlet dur;
 #X obj 6 183 outlet bang;
 #X obj 6 9 r \$0-homo_status;
 #X obj 152 119 max 100;
-#X connect 0 0 8 0;
-#X connect 1 0 4 1;
-#X connect 1 0 5 0;
-#X connect 2 0 4 0;
+#X obj 6 148 metro 1000;
+#X connect 0 0 7 0;
+#X connect 1 0 4 0;
+#X connect 1 0 8 1;
 #X connect 2 0 3 0;
+#X connect 2 0 8 0;
 #X connect 3 0 1 0;
-#X connect 4 0 6 0;
-#X connect 7 0 2 0;
-#X connect 8 0 1 1;
+#X connect 6 0 2 0;
+#X connect 7 0 1 1;
+#X connect 8 0 5 0;
 #X restore 75 112 pd metro;
 #N canvas 1282 54 636 1000 amp 0;
 #X obj 96 87 pick-random;
