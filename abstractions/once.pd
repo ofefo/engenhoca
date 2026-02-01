@@ -1,0 +1,15 @@
+#N canvas 66 32 450 300 12;
+#X obj 110 75 inlet;
+#X obj 105 187 spigot 1;
+#X obj 110 104 t b f;
+#X msg 125 151 0;
+#X msg 165 99 1;
+#X obj 165 63 inlet;
+#X obj 102 219 outlet;
+#X connect 0 0 2 0;
+#X connect 1 0 6 0;
+#X connect 2 0 3 0;
+#X connect 2 1 1 0;
+#X connect 3 0 1 1;
+#X connect 4 0 1 1;
+#X connect 5 0 4 0;
