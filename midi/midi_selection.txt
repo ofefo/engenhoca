@@ -10,19 +10,19 @@
 0 77 Shakuhachi;
 13 88 Night_Vision;
 0 98 Crystal;
-0 108 Kalimba;
+8 30 Feedback_Guitar;
+8 31 Guitar_Feedback;
+8 80 Sine_Wave;
 0 14 Tubular_Bells;
+0 108 Kalimba;
 0 112 Tinker_Bell;
+0 113 Agogo;
 8 14 Church_Bells;
 9 14 Carillon;
 11 8 Tinkling_Bells;
 11 14 Bell_Tower;
 11 98 Synth_Chime;
 12 10 Christmas_Bells;
-0 113 Agogo;
-8 30 Feedback_Guitar;
-8 31 Guitar_Feedback;
-8 80 Sine_Wave;
 0 47 Timpani;
 8 117 Melodic_Tom_2;
 0 115 Wood_Block;
@@ -70,6 +70,8 @@
 11 121 Filter_Snap;
 11 127 Interference;
 12 119 Tambourine;
+120 56 SFXKit;
+128 56 SFX;
 120 0 Standard_Drums;
 120 1 Standard_2_Drums;
 120 8 Room_Drums;
@@ -80,7 +82,6 @@
 120 32 Jazz_Drums;
 120 40 Brush_Drums;
 120 48 Orchestral_Perc.;
-120 56 SFXKit;
 128 0 Standard;
 128 1 Standard_2;
 128 8 Room;
@@ -90,5 +91,3 @@
 128 26 Dance;
 128 32 Jazz;
 128 40 Brush;
-128 48 Orchestral;
-128 56 SFX;
