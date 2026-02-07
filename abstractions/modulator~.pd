@@ -1,4 +1,4 @@
-#N canvas 1440 22 476 1000 12;
+#N canvas 1440 22 636 1511 12;
 #X obj 155 123 outlet~;
 #X obj 102 14 inlet frequency;
 #X obj 12 14 inlet timbre;

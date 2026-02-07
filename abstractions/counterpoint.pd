@@ -1,4 +1,4 @@
-#N canvas 640 22 636 1000 12;
+#N canvas 1280 0 1276 1511 12;
 #N struct \$0-f float x;
 #N struct \$0-f float x;
 #N struct \$0-f float x;
@@ -9,7 +9,7 @@
 #N struct \$0-f float x;
 #N struct \$0-f float x;
 #X obj 5 5 inlet;
-#N canvas 0 22 956 1000 pitch 0;
+#N canvas 0 22 849 1511 pitch 0;
 #X obj 5 8 inlet bang;
 #X obj 286 255 outlet;
 #N canvas 1282 54 636 1000 asc 0;
@@ -808,7 +808,7 @@
 #X obj 220 239 list-dripslow;
 #X obj 18 422 outlet;
 #X obj 18 367 spigot;
-#N canvas 962 54 956 1000 timbre 0;
+#N canvas 962 54 849 1511 timbre 0;
 #X obj 6 7 inlet bang;
 #X obj 6 32 f 0;
 #X obj 6 57 + 1;
@@ -820,7 +820,7 @@
 #X obj 6 132 t b b;
 #X obj 90 7 inlet rhythm;
 #X obj 90 55 expr if($f1 < 150 \, 200 \, rint(1000 / ($f1/20)));
-#X obj 38 165 random 11;
+#X obj 38 165 random 127;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
@@ -1415,7 +1415,7 @@
 #X obj 11 293 f;
 #X obj 11 317 t b f;
 #X obj 11 439 map 0 100 50 99, f 28;
-#N canvas 960 22 956 1000 variations 0;
+#N canvas 960 22 849 1511 variations 1;
 #X obj 22 18 inlet list;
 #X obj 22 43 t b l, f 16;
 #X obj 22 68 list-random 10 10;
@@ -1423,14 +1423,16 @@
 #X obj 114 99 +;
 #X obj 22 124 outlet;
 #X obj 86 99 f;
+#X obj 143 99 f;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 1 1 4 1;
+#X connect 1 1 7 0;
 #X connect 2 0 3 0;
 #X connect 3 0 5 0;
 #X connect 3 1 6 0;
 #X connect 4 0 3 1;
 #X connect 6 0 4 0;
+#X connect 7 0 4 1;
 #X restore 257 94 pd variations;
 #X obj 224 36 list length;
 #X obj 185 144 list-lastx 5;
@@ -1498,11 +1500,11 @@
 #X connect 4 0 0 0;
 #X restore 18 180 pd metro_plus;
 #X obj 524 337 list-show;
-#X msg 524 362 86.9757;
+#X msg 524 362 89.6705;
 #X obj 570 111 r \$0-counter_status;
 #X floatatom 721 83 5 0 0 0 - - - 0;
 #X obj 620 236 list-show;
-#X msg 620 261 0.159753 0.159488 0.162221 0.143088 0.141955 0.151532 0.18979 0.24878 0.274877 0.288747 0.23119 0.23942 0.24021 0.243184 0.208095 0.223374 0.267813 0.375857 0.270499 0.334437 0.304487 0.317538 0.316329 0.321882 0.351242 0.254242 0.30646 0.337395 0.40698 0.337351 0.283022 0.387621 0.328328 0.240684;
+#X msg 620 261 0.131035 0.129597 0.162584 0.179206 0.118098 0.16477 0.182501 0.116798 0.266915 0.250292 0.263999 0.240775 0.218665 0.253259 0.179121 0.181248 0.198317 0.287158 0.357117 0.285921 0.340797 0.289548 0.218822 0.285981 0.326144 0.269882 0.275861 0.277685 0.413871 0.334704 0.370128 0.560143 0.429594 0.41383 0.474248 0.361392 0.450492 0.314652 0.5595;
 #X obj 650 161 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X obj 396 205 bng 20 250 50 0 empty empty empty 0 -10 0 12 #fcfcfc #000000 #000000;
 #X connect 0 0 18 0;
