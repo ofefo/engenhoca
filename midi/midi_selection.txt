@@ -4,7 +4,6 @@
 0 12 Marimba;
 0 13 Xylophone;
 0 17 Percussive_Organ;
-0 53 Voice_Oohs;
 0 55 Orchestra_Hit;
 0 76 Bottle_Blow;
 0 77 Shakuhachi;
@@ -24,6 +23,7 @@
 11 98 Synth_Chime;
 12 10 Christmas_Bells;
 0 47 Timpani;
+0 53 Voice_Oohs;
 8 117 Melodic_Tom_2;
 0 115 Wood_Block;
 0 116 Taiko_Drum;

@@ -1,4 +1,4 @@
-0 - 16: melodic
-16 - 26: bell
-26 - 75: random noise
-75 - 94: drums
+0 - 16: melodic;
+16 - 26: bell;
+26 - 75: random noise;
+75 - 94: drums;
