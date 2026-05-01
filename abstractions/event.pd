@@ -1,5 +1,5 @@
-#N canvas 66 32 2494 1497 12;
-#X text 106 37 Timbre \, pitch \, duration \, legato \, amp \, noiseness;
+#N canvas 0 0 849 1511 12;
+#X text 3 108 Timbre \, pitch \, duration \, legato \, amp \, noiseness;
 #X obj 8 35 list split 5;
 #X obj 8 60 unpack f f f f f, f 29;
 #X obj 8 8 inlet event;
